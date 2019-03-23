@@ -59,24 +59,26 @@ namespace JapanVerb
         {
             JapVerb verb = verbs.getPrev();
             txtBlock.Text = verb.VerbMasuForm;
+            resetTextBoxs();
+        }
 
+        private void resetTextBoxs()
+        {
             txtDictNameInput.Text = "";
             txtTeFormInput.Text = "";
             txtNayiFormInput.Text = "";
             txtTaFormInput.Text = "";
-
+            txtDictNameInput.Background = Brushes.White;
+            txtTeFormInput.Background = Brushes.White;
+            txtDictNameInput.Foreground = Brushes.Black;
+            txtTeFormInput.Foreground = Brushes.Black;
         }
 
         private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
             JapVerb verb = verbs.getNext();
             txtBlock.Text = verb.VerbMasuForm;
-
-
-            txtDictNameInput.Text = "";
-            txtTeFormInput.Text = "";
-            txtNayiFormInput.Text = "";
-            txtTaFormInput.Text = "";
+            resetTextBoxs();
         }
 
         private void BtnCheck_Click(object sender, RoutedEventArgs e)
@@ -87,22 +89,27 @@ namespace JapanVerb
             {
                 if (txtDictNameInput.Text != verb.VerbDictionaryName)
                 {
-                    txtDictNameInput.Foreground = Brushes.Red;
+                    txtDictNameInput.Foreground = Brushes.White;
+                    txtDictNameInput.Background  = Brushes.Red;
                 }
                 else
                 {
-                    txtDictNameInput.Foreground = Brushes.Green;
+                    txtDictNameInput.Foreground = Brushes.White;
+                    txtDictNameInput.Background = Brushes.LightGreen;
                 }
             }
-          
-                if (txtTeFormInput.Text != verb.VerbTeform)
-                {
-                    txtTeFormInput.Foreground = Brushes.Red;
-                }
-                else
-                {
-                    txtTeFormInput.Foreground = Brushes.Green;
-                }
+
+            if (txtTeFormInput.Text != verb.VerbTeform)
+            {
+                txtTeFormInput.Foreground = Brushes.White;
+                txtTeFormInput.Background = Brushes.Red;
+            }
+
+            else
+            {
+                txtTeFormInput.Foreground = Brushes.White;
+                txtTeFormInput.Background = Brushes.LightGreen;
+            }
         }
     }
 }
