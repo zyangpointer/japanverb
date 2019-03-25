@@ -59,6 +59,8 @@ namespace JapanVerb
         {
             JapVerb verb = verbs.getPrev();
             txtBlock.Text = verb.VerbMasuForm;
+            txtBlockKanji.Text = verb.VerbKanji;
+            txtBlockMeaning.Text = verb.VerbMeaning;
             resetTextBoxs();
         }
 
@@ -78,6 +80,8 @@ namespace JapanVerb
         {
             JapVerb verb = verbs.getNext();
             txtBlock.Text = verb.VerbMasuForm;
+            txtBlockKanji.Text = verb.VerbKanji;
+            txtBlockMeaning.Text = verb.VerbMeaning;
             resetTextBoxs();
         }
 

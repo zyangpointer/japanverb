@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JapanVerb"
         mc:Ignorable="d"
-        Title="日语动词变形" Height="320.221" Width="483.886"
+        Title="日语动词变形" Height="391.221" Width="483.886"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -15,27 +15,37 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="13*"/>
+
+
+            <ColumnDefinition Width="15*"/>
 
         </Grid.ColumnDefinitions>
-        <materialDesign:Card Padding="32" Margin="16,16,267,0" Height="166"/>
-        <materialDesign:Card Padding="32" Margin="239,16,19,0" Height="166"/>
+        <materialDesign:Card Padding="32" Margin="16,16,12,0" Height="246"/>
+        <materialDesign:Card Padding="32" Margin="18,16,19,0" Height="246" Grid.Column="1"/>
 
-        <Button x:Name="btnStart" Content="开始" HorizontalAlignment="Left" Margin="20,218,0,0" VerticalAlignment="Top" Width="75" Click="BtnStart_Click"/>
-        <TextBlock x:Name="txtBlock" HorizontalAlignment="Left" Margin="16,53,0,0" TextWrapping="Wrap" Text="きます" VerticalAlignment="Top" Height="111" Width="190" FontSize="36" TextAlignment="Center"/>
-        <Button x:Name="btnStop" Content="停止" HorizontalAlignment="Left" Margin="100,218,0,0" VerticalAlignment="Top" Width="75" Click="BtnStop_Click" RenderTransformOrigin="0.464,0.435"/>
-        <TextBox x:Name="txtDictNameInput" HorizontalAlignment="Left" Height="23" Margin="319,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtTeFormInput" HorizontalAlignment="Left" Height="23" Margin="319,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtNayiFormInput" HorizontalAlignment="Left" Height="23" Margin="319,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtTaFormInput" HorizontalAlignment="Left" Height="23" Margin="319,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="249,35,0,0" TextWrapping="Wrap" Text="字典形" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="249,75,0,0" TextWrapping="Wrap" Text="Te形" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="249,111,0,0" TextWrapping="Wrap" Text="Na-yi形" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="249,152,0,0" TextWrapping="Wrap" Text="Ta 形" VerticalAlignment="Top"/>
-        <Button x:Name="btnPrev" Content="前一个" HorizontalAlignment="Left" Margin="222,218,0,0" VerticalAlignment="Top" Width="75" Click="BtnPrev_Click" RenderTransformOrigin="0.464,0.435"/>
-        <Button x:Name="btnNext" Content="后一个" HorizontalAlignment="Left" Margin="302,218,0,0" VerticalAlignment="Top" Width="75" Click="BtnNext_Click" RenderTransformOrigin="0.464,0.435"/>
-        <Button x:Name="btnCheck" Content="核对" HorizontalAlignment="Left" Margin="382,218,0,0" VerticalAlignment="Top" Width="75" Click="BtnCheck_Click" RenderTransformOrigin="0.464,0.435"/>
+
+        <Button x:Name="btnStart" Content="开始" HorizontalAlignment="Left" Margin="20,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnStart_Click" Grid.Row="1"/>
+        <TextBlock x:Name="txtBlock" HorizontalAlignment="Left" Margin="19,28,0,0" TextWrapping="Wrap" Text="きます" VerticalAlignment="Top" Height="74" Width="190" FontSize="36" TextAlignment="Center"/>
+        <Button x:Name="btnStop" Content="停止" HorizontalAlignment="Left" Margin="100,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnStop_Click" RenderTransformOrigin="0.464,0.435" Grid.Row="1"/>
+        <TextBox x:Name="txtDictNameInput" HorizontalAlignment="Left" Height="23" Margin="98,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox x:Name="txtTeFormInput" HorizontalAlignment="Left" Height="23" Margin="98,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox x:Name="txtNayiFormInput" HorizontalAlignment="Left" Height="23" Margin="98,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox x:Name="txtTaFormInput" HorizontalAlignment="Left" Height="23" Margin="98,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,35,0,0" TextWrapping="Wrap" Text="字典形" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="39"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,75,0,0" TextWrapping="Wrap" Text="Te形" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,111,0,0" TextWrapping="Wrap" Text="Na-yi形" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="44"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,152,0,0" TextWrapping="Wrap" Text="Ta 形" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="29"/>
+        <Button x:Name="btnPrev" Content="前一个" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnPrev_Click" RenderTransformOrigin="0.464,0.435" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="btnNext" Content="后一个" HorizontalAlignment="Left" Margin="90,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnNext_Click" RenderTransformOrigin="0.464,0.435" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="btnCheck" Content="核对" HorizontalAlignment="Left" Margin="170,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnCheck_Click" RenderTransformOrigin="0.464,0.435" Grid.Column="1" Grid.Row="1"/>
+        <TextBlock x:Name="txtBlockKanji" HorizontalAlignment="Left" Margin="16,107,0,0" TextWrapping="Wrap" Text="きます" VerticalAlignment="Top" Height="70" Width="190" FontSize="36" TextAlignment="Center"/>
+        <TextBlock x:Name="txtBlockMeaning" HorizontalAlignment="Left" Margin="19,182,0,0" TextWrapping="Wrap" Text="きます" VerticalAlignment="Top" Height="70" Width="190" FontSize="36" TextAlignment="Center"/>
 
     </Grid>
 </Window>

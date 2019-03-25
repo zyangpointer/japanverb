@@ -118,6 +118,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -298,7 +306,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup1"
         "ProductCode" = "8:{507B8F6B-5C39-434B-919F-B6D6790AE04E}"
-        "PackageCode" = "8:{7CB4DD8E-A67A-455B-AE94-AD1B031E0029}"
+        "PackageCode" = "8:{8D11D38B-665D-46B8-8B4E-BF7A12F3261B}"
         "UpgradeCode" = "8:{2E86E487-EBE6-4F5F-9FAB-B4DBFF2D71AA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
