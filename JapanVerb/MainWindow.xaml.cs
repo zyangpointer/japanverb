@@ -55,7 +55,8 @@ namespace JapanVerb
                     expanderTxtMasu.Text = verb.VerbMasuForm;
                     expanderTxtKanji.Text = verb.VerbKanji;
                     expanderTxtMeaning.Text = verb.VerbMeaning;
-                    counter = 10;
+                    counter = 40;
+                    resetTextBoxs();
                 }
                 btnStart.Content = counter + "秒";
             }));
@@ -97,8 +98,16 @@ namespace JapanVerb
             txtTaFormInput.Text = "";
             txtDictNameInput.Background = Brushes.White;
             txtTeFormInput.Background = Brushes.White;
+            txtNayiFormInput.Background = Brushes.White;
+            txtTaFormInput.Background = Brushes.White;
+
+
             txtDictNameInput.Foreground = Brushes.Black;
             txtTeFormInput.Foreground = Brushes.Black;
+            txtNayiFormInput.Foreground = Brushes.Black;
+            txtTaFormInput.Foreground = Brushes.Black;
+
+
         }
 
         private void BtnNext_Click(object sender, RoutedEventArgs e)
@@ -138,6 +147,29 @@ namespace JapanVerb
             {
                 txtTeFormInput.Foreground = Brushes.White;
                 txtTeFormInput.Background = Brushes.LightGreen;
+            }
+
+            if (txtNayiFormInput.Text != verb.VerbNayiForm)
+            {
+                txtNayiFormInput.Foreground = Brushes.White;
+                txtNayiFormInput.Background = Brushes.Red;
+            }
+            else
+            {
+                txtNayiFormInput.Foreground = Brushes.White;
+                txtNayiFormInput.Background = Brushes.LightGreen;
+            }
+
+             if (txtTaFormInput.Text != verb.VerbTaForm)
+            {
+                txtTaFormInput.Foreground = Brushes.White;
+                txtTaFormInput.Background = Brushes.Red;
+            }
+
+            else
+            {
+                txtTaFormInput.Foreground = Brushes.White;
+                txtTaFormInput.Background = Brushes.LightGreen;
             }
         }
 
