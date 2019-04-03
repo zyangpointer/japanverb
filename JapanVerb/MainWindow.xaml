@@ -32,7 +32,7 @@
                     <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}" Margin="0,-13,0,-11" />
                     <TextBlock VerticalAlignment="Center" Margin="16,-4,0,-5" FontSize="18" Text="日语动词变形" FontWeight="Bold" TextDecorations="{x:Null}"/>
                     <TextBlock TextWrapping="Wrap" Text="联系开发者" Margin="300,0,0,0" FontSize="12" FontWeight="Bold"/>
-                    <Button  Command="{Binding RunExtendedDialogCommand}" Style="{StaticResource MaterialDesignFloatingActionButton}"  ToolTip="联系开发者" Width="25" Height="24" RenderTransformOrigin="0.5,0.5" Margin="5,-6,0,-5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#FFBEE21B" BorderBrush="White" Click="Button_Click">
+                    <Button x:Name="btnDeveloper"  Command="{Binding RunExtendedDialogCommand}" Style="{StaticResource MaterialDesignFloatingActionButton}"  ToolTip="联系开发者" Width="25" Height="24" RenderTransformOrigin="0.5,0.5" Margin="5,-6,0,-5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#FFBEE21B" BorderBrush="White" Click="BtnDeveloper_Click_1">
 
                         <materialDesign:PackIcon
                             Kind="AccountArrowRightOutline"
@@ -45,7 +45,7 @@
         </materialDesign:ColorZone>
         <!-- long hand form for setting the message -->
         <materialDesign:Snackbar IsActive="False" x:Name="SnackbarTwo" Grid.ColumnSpan="2" Margin="236,0,135,10" Width="226" >
-            <materialDesign:SnackbarMessage Content="zhengyangcool" ActionContent="" Margin="32,0,25,0" />
+            <materialDesign:SnackbarMessage Content="zhengyangcool" ActionContent="微信" Margin="32,0,25,0" />
         </materialDesign:Snackbar>
 
 
@@ -103,7 +103,7 @@
                 SnapsToDevicePixels="True" />
             <Expander
                     HorizontalAlignment="Stretch"
-                     Header="释意" FontSize="25" FontWeight="Bold">
+                     Header="释义" FontSize="25" FontWeight="Bold">
                 <StackPanel
                         Orientation="Vertical"
                         TextBlock.Foreground="{DynamicResource MaterialDesignBody}"

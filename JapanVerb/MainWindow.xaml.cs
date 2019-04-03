@@ -65,6 +65,10 @@ namespace JapanVerb
         private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
             timer.Start();
+
+            btnNext.IsEnabled = false;
+            btnPrev.IsEnabled = false;
+            btnCheck.IsEnabled = false;
         }
 
         private void BtnStop_Click(object sender, RoutedEventArgs e)
@@ -72,6 +76,10 @@ namespace JapanVerb
             timer.Stop();
             btnStart.Content = "开始";
             counter = TotalSeconds;
+
+            btnNext.IsEnabled = true;
+            btnPrev.IsEnabled = true;
+            btnCheck.IsEnabled = true;
         }
 
         private void BtnPrev_Click(object sender, RoutedEventArgs e)
@@ -135,12 +143,19 @@ namespace JapanVerb
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnDeveloper_Click(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        private void BtnDeveloper_Click_1(object sender, RoutedEventArgs e)
         {
             if (SnackbarTwo.IsActive == true)
                 SnackbarTwo.IsActive = false;
             else
+            {
                 SnackbarTwo.IsActive = true;
+            }
         }
     }
 }
