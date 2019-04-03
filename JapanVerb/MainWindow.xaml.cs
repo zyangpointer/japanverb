@@ -38,7 +38,7 @@ namespace JapanVerb
             {
 
                JapVerb verb =   verbs.getNext();
-                txtBlock.Text = verb.VerbMasuForm;
+               //txtBlock.Text = verb.VerbMasuForm;
 
 
             }));
@@ -58,9 +58,9 @@ namespace JapanVerb
         private void BtnPrev_Click(object sender, RoutedEventArgs e)
         {
             JapVerb verb = verbs.getPrev();
-            txtBlock.Text = verb.VerbMasuForm;
-            txtBlockKanji.Text = verb.VerbKanji;
-            txtBlockMeaning.Text = verb.VerbMeaning;
+            expanderTxtMasu.Text = verb.VerbMasuForm;
+            expanderTxtKanji.Text = verb.VerbKanji;
+            expanderTxtMeaning.Text = verb.VerbMeaning;
             resetTextBoxs();
         }
 
@@ -79,9 +79,9 @@ namespace JapanVerb
         private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
             JapVerb verb = verbs.getNext();
-            txtBlock.Text = verb.VerbMasuForm;
-            txtBlockKanji.Text = verb.VerbKanji;
-            txtBlockMeaning.Text = verb.VerbMeaning;
+            expanderTxtMasu.Text = verb.VerbMasuForm;
+            expanderTxtKanji.Text = verb.VerbKanji;
+            expanderTxtMeaning.Text = verb.VerbMeaning;
             resetTextBoxs();
         }
 
@@ -114,6 +114,14 @@ namespace JapanVerb
                 txtTeFormInput.Foreground = Brushes.White;
                 txtTeFormInput.Background = Brushes.LightGreen;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (SnackbarTwo.IsActive == true)
+                SnackbarTwo.IsActive = false;
+            else
+                SnackbarTwo.IsActive = true;
         }
     }
 }

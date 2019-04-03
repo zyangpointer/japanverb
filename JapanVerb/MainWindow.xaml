@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JapanVerb"
         mc:Ignorable="d"
-        Title="日语动词变形" Height="391.221" Width="483.886"
+        Title="日语动词变形" Height="460.888" Width="604.886"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -13,39 +13,113 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}">
-    <Grid>
+        FontFamily="{DynamicResource MaterialDesignFont}" ResizeMode="NoResize">
+
+    <Grid Background="White" Margin="0,0,2,1">
         <Grid.RowDefinitions>
-            <RowDefinition Height="34*"/>
-            <RowDefinition Height="11*"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="245*"/>
+            <RowDefinition Height="74*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="13*"/>
-
-
             <ColumnDefinition Width="15*"/>
 
         </Grid.ColumnDefinitions>
-        <materialDesign:Card Padding="32" Margin="16,16,12,0" Height="246"/>
-        <materialDesign:Card Padding="32" Margin="18,16,19,0" Height="246" Grid.Column="1"/>
+        <materialDesign:ColorZone Mode="PrimaryMid" Padding="16" Grid.ColumnSpan="2" Height="45" Margin="0,0,-2,0">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                    <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}" Margin="0,-13,0,-11" />
+                    <TextBlock VerticalAlignment="Center" Margin="16,-4,0,-5" FontSize="18" Text="日语动词变形" FontWeight="Bold" TextDecorations="{x:Null}"/>
+                    <TextBlock TextWrapping="Wrap" Text="联系开发者" Margin="300,0,0,0" FontSize="12" FontWeight="Bold"/>
+                    <Button  Command="{Binding RunExtendedDialogCommand}" Style="{StaticResource MaterialDesignFloatingActionButton}"  ToolTip="联系开发者" Width="25" Height="24" RenderTransformOrigin="0.5,0.5" Margin="5,-6,0,-5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#FFBEE21B" BorderBrush="White" Click="Button_Click">
+
+                        <materialDesign:PackIcon
+                            Kind="AccountArrowRightOutline"
+                            Height="15"
+                            Width="15" />
+                    </Button>
+                </StackPanel>
+
+            </DockPanel>
+        </materialDesign:ColorZone>
+        <!-- long hand form for setting the message -->
+        <materialDesign:Snackbar IsActive="False" x:Name="SnackbarTwo" Grid.ColumnSpan="2" Margin="236,0,135,10" Width="226" >
+            <materialDesign:SnackbarMessage Content="zhengyangcool" ActionContent="微信" Margin="32,0,25,0" />
+        </materialDesign:Snackbar>
 
 
-        <Button x:Name="btnStart" Content="开始" HorizontalAlignment="Left" Margin="20,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnStart_Click" Grid.Row="1"/>
-        <TextBlock x:Name="txtBlock" HorizontalAlignment="Left" Margin="19,28,0,0" TextWrapping="Wrap" Text="きます" VerticalAlignment="Top" Height="74" Width="190" FontSize="36" TextAlignment="Center"/>
-        <Button x:Name="btnStop" Content="停止" HorizontalAlignment="Left" Margin="100,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnStop_Click" RenderTransformOrigin="0.464,0.435" Grid.Row="1"/>
-        <TextBox x:Name="txtDictNameInput" HorizontalAlignment="Left" Height="23" Margin="98,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <TextBox x:Name="txtTeFormInput" HorizontalAlignment="Left" Height="23" Margin="98,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <TextBox x:Name="txtNayiFormInput" HorizontalAlignment="Left" Height="23" Margin="98,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <TextBox x:Name="txtTaFormInput" HorizontalAlignment="Left" Height="23" Margin="98,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="28,35,0,0" TextWrapping="Wrap" Text="字典形" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="39"/>
-        <TextBlock HorizontalAlignment="Left" Margin="28,75,0,0" TextWrapping="Wrap" Text="Te形" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="25"/>
-        <TextBlock HorizontalAlignment="Left" Margin="28,111,0,0" TextWrapping="Wrap" Text="Na-yi形" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="44"/>
-        <TextBlock HorizontalAlignment="Left" Margin="28,152,0,0" TextWrapping="Wrap" Text="Ta 形" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="29"/>
-        <Button x:Name="btnPrev" Content="前一个" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnPrev_Click" RenderTransformOrigin="0.464,0.435" Grid.Column="1" Grid.Row="1"/>
-        <Button x:Name="btnNext" Content="后一个" HorizontalAlignment="Left" Margin="90,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnNext_Click" RenderTransformOrigin="0.464,0.435" Grid.Column="1" Grid.Row="1"/>
-        <Button x:Name="btnCheck" Content="核对" HorizontalAlignment="Left" Margin="170,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnCheck_Click" RenderTransformOrigin="0.464,0.435" Grid.Column="1" Grid.Row="1"/>
-        <TextBlock x:Name="txtBlockKanji" HorizontalAlignment="Left" Margin="16,107,0,0" TextWrapping="Wrap" Text="きます" VerticalAlignment="Top" Height="70" Width="190" FontSize="36" TextAlignment="Center"/>
-        <TextBlock x:Name="txtBlockMeaning" HorizontalAlignment="Left" Margin="19,182,0,0" TextWrapping="Wrap" Text="きます" VerticalAlignment="Top" Height="70" Width="190" FontSize="36" TextAlignment="Center"/>
+
+        <materialDesign:Card Padding="32" Margin="10,5,0,0" Height="267" Grid.Row="1" Grid.RowSpan="2" BorderThickness="1,1,0,1"/>
+        <materialDesign:Card Padding="32" Margin="18,5,19,0" Height="267" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Background="White"/>
+
+
+        <Button x:Name="btnStart" Content="开始" HorizontalAlignment="Left" Margin="21,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnStart_Click" Grid.Row="2" Background="#FF884EF0"/>
+        <Button x:Name="btnStop" Content="停止" HorizontalAlignment="Left" Margin="101,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnStop_Click" RenderTransformOrigin="0.464,0.435" Grid.Row="2" Background="#FF884EF0"/>
+
+
+        <TextBox x:Name="txtDictNameInput" HorizontalAlignment="Left" Height="23" Margin="98,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
+        <TextBox x:Name="txtTeFormInput" HorizontalAlignment="Left" Height="23" Margin="98,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
+        <TextBox x:Name="txtNayiFormInput" HorizontalAlignment="Left" Height="23" Margin="98,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
+        <TextBox x:Name="txtTaFormInput" HorizontalAlignment="Left" Height="23" Margin="98,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,24,0,0" TextWrapping="Wrap" Text="字典形" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="39" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="25" Grid.Row="1"><Run Text="て"/><Run Text="形"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="28,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="44" Grid.Row="1"><Run Text="な"/><Run Text="い"/><Run Text="形"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="28,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="29" Grid.Row="1"><Run Text="た"/><Run Text="形"/></TextBlock>
+        <Button x:Name="btnPrev" Content="前一个" HorizontalAlignment="Left" Margin="53,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnPrev_Click" RenderTransformOrigin="0.464,0.435" Grid.Column="1" Grid.Row="2" Background="#FF884EF0"/>
+        <Button x:Name="btnNext" Content="后一个" HorizontalAlignment="Left" Margin="133,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnNext_Click" RenderTransformOrigin="0.464,0.435" Grid.Column="1" Grid.Row="2" Background="#FF884EF0"/>
+        <Button x:Name="btnCheck" Content="核对" HorizontalAlignment="Left" Margin="213,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnCheck_Click" RenderTransformOrigin="0.464,0.435" Grid.Column="1" Grid.Row="2" Background="#FF884EF0"/>
+
+
+        <StackPanel Height="256" Margin="10,5,0,0" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2">
+            <!--<TextBlock x:Name="txtBlockKanji" HorizontalAlignment="Left" Margin="11,10,0,0" TextWrapping="Wrap" Text="きます" VerticalAlignment="Top" Height="70" Width="171" FontSize="36" TextAlignment="Center"/>
+            <TextBlock x:Name="txtBlockMeaning" HorizontalAlignment="Left" Margin="1,10,0,0" TextWrapping="Wrap" Text="きます" VerticalAlignment="Top" Height="70" Width="190" FontSize="36" TextAlignment="Center"/>
+            <TextBlock x:Name="txtBlock" HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="きます" VerticalAlignment="Top" Height="74" Width="190" FontSize="36" TextAlignment="Center"/>-->
+
+            <Expander  HorizontalAlignment="Stretch" Header="ます" FontSize="25" FontWeight="Bold">
+                <StackPanel    Orientation="Vertical"        TextBlock.Foreground="{DynamicResource MaterialDesignBody}"   Margin="24,0,24,5">
+                    <TextBlock x:Name="expanderTxtMasu"  TextWrapping="Wrap" />
+                </StackPanel>
+            </Expander>
+            <Border
+                Background="{DynamicResource MaterialDesignDivider}"
+                Height="1"
+                HorizontalAlignment="Stretch"
+                SnapsToDevicePixels="True" />
+            <Expander
+                    HorizontalAlignment="Stretch"
+                     Header="漢字" FontSize="25" FontWeight="Bold">
+                <StackPanel
+                        Orientation="Vertical"
+                        TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                        Margin="24,0,24,5">
+                    <TextBlock x:Name="expanderTxtKanji"   TextWrapping="Wrap" />
+                </StackPanel>
+            </Expander>
+            <Border
+                Background="{DynamicResource MaterialDesignDivider}"
+                Height="1"
+                HorizontalAlignment="Stretch"
+                SnapsToDevicePixels="True" />
+            <Expander
+                    HorizontalAlignment="Stretch"
+                     Header="释意" FontSize="25" FontWeight="Bold">
+                <StackPanel
+                        Orientation="Vertical"
+                        TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                        Margin="24,0,24,5">
+                    <TextBlock x:Name="expanderTxtMeaning"   TextWrapping="Wrap" />
+                </StackPanel>
+            </Expander>
+            <Border
+                Background="{DynamicResource MaterialDesignDivider}"
+                Height="1"
+                HorizontalAlignment="Stretch"
+                SnapsToDevicePixels="True" />
+
+
+        </StackPanel>
+
 
     </Grid>
 </Window>
