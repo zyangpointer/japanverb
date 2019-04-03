@@ -45,7 +45,7 @@
         </materialDesign:ColorZone>
         <!-- long hand form for setting the message -->
         <materialDesign:Snackbar IsActive="False" x:Name="SnackbarTwo" Grid.ColumnSpan="2" Margin="236,0,135,10" Width="226" >
-            <materialDesign:SnackbarMessage Content="zhengyangcool" ActionContent="微信" Margin="32,0,25,0" />
+            <materialDesign:SnackbarMessage Content="zhengyangcool" ActionContent="" Margin="32,0,25,0" />
         </materialDesign:Snackbar>
 
 
@@ -76,7 +76,7 @@
             <TextBlock x:Name="txtBlockMeaning" HorizontalAlignment="Left" Margin="1,10,0,0" TextWrapping="Wrap" Text="きます" VerticalAlignment="Top" Height="70" Width="190" FontSize="36" TextAlignment="Center"/>
             <TextBlock x:Name="txtBlock" HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="きます" VerticalAlignment="Top" Height="74" Width="190" FontSize="36" TextAlignment="Center"/>-->
 
-            <Expander  HorizontalAlignment="Stretch" Header="ます" FontSize="25" FontWeight="Bold">
+            <Expander x:Name="expanderMasu"  HorizontalAlignment="Stretch" Header="ます" FontSize="25" FontWeight="Bold">
                 <StackPanel    Orientation="Vertical"        TextBlock.Foreground="{DynamicResource MaterialDesignBody}"   Margin="24,0,24,5">
                     <TextBlock x:Name="expanderTxtMasu"  TextWrapping="Wrap" />
                 </StackPanel>

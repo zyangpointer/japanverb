@@ -23,24 +23,41 @@ namespace JapanVerb
         System.Timers.Timer timer;
         JapanVerbs verbs = new JapanVerbs();
 
+        const int TotalSeconds = 30;
+
+        private int counter = TotalSeconds;
+
         public MainWindow()
         {
             InitializeComponent();
 
             timer = new System.Timers.Timer();
-            timer.Interval = 3000;
+            timer.Interval = 1000;
             timer.Elapsed += Timer_Elapsed;
+
+            JapVerb verb = verbs.currentVerb();
+            expanderTxtMasu.Text = verb.VerbMasuForm;
+            expanderTxtKanji.Text = verb.VerbKanji;
+            expanderTxtMeaning.Text = verb.VerbMeaning;
+
+            expanderMasu.IsExpanded = true;
+
         }
 
         private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
-
-               JapVerb verb =   verbs.getNext();
-               //txtBlock.Text = verb.VerbMasuForm;
-
-
+                counter--;
+                if(counter == 0)
+                {
+                    JapVerb verb = verbs.getNext();
+                    expanderTxtMasu.Text = verb.VerbMasuForm;
+                    expanderTxtKanji.Text = verb.VerbKanji;
+                    expanderTxtMeaning.Text = verb.VerbMeaning;
+                    counter = 10;
+                }
+                btnStart.Content = counter + "秒";
             }));
               
         }
@@ -53,6 +70,8 @@ namespace JapanVerb
         private void BtnStop_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
+            btnStart.Content = "开始";
+            counter = TotalSeconds;
         }
 
         private void BtnPrev_Click(object sender, RoutedEventArgs e)
