@@ -31,14 +31,29 @@
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
                     <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}" Margin="0,-13,0,-11" />
                     <TextBlock VerticalAlignment="Center" Margin="16,-4,0,-5" FontSize="18" Text="日语动词变形" FontWeight="Bold" TextDecorations="{x:Null}"/>
-                    <TextBlock TextWrapping="Wrap" Text="联系开发者" Margin="300,0,0,0" FontSize="12" FontWeight="Bold"/>
-                    <Button x:Name="btnDeveloper"  Command="{Binding RunExtendedDialogCommand}" Style="{StaticResource MaterialDesignFloatingActionButton}"  ToolTip="联系开发者" Width="25" Height="24" RenderTransformOrigin="0.5,0.5" Margin="5,-6,0,-5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#FFBEE21B" BorderBrush="White" Click="BtnDeveloper_Click_1">
-
+                    <TextBlock TextWrapping="Wrap" Margin="287,0,0,0" FontSize="12" FontWeight="Bold" Width="62"><Run Text="联系开发者"/><Run Text=" "/></TextBlock>
+                    <ToggleButton x:Name="toggleDirectionButton"
+                          Style="{StaticResource MaterialDesignActionToggleButton}"
+                          Margin="0,-1" Background="#FF916BD6" Width="15" Height="15">  
+                        <ToggleButton.Content>
+                            <materialDesign:PackIcon
+                                  Kind="ChevronRightCircleOutline" Width="10" Height="10" />
+                        </ToggleButton.Content>
+                        <materialDesign:ToggleButtonAssist.OnContent>
+                            <materialDesign:PackIcon
+                                Kind="ChevronLeftCircleOutline" Width="10" Height="10" />
+                        </materialDesign:ToggleButtonAssist.OnContent>
+                    </ToggleButton>
+                    <ToggleButton x:Name="toggleIconButton"
+                        Style="{StaticResource MaterialDesignActionToggleButton}"
+                        Margin="0,-9,0,-8" Background="#FFB9D66B" Width="30" Height="30" Click="ToggleIconButton_Click">
+                        <materialDesign:ToggleButtonAssist.OnContent>
+                            <materialDesign:PackIcon
+                                Kind="Cellphone" Width="20" Height="20" />
+                        </materialDesign:ToggleButtonAssist.OnContent>
                         <materialDesign:PackIcon
-                            Kind="AccountArrowRightOutline"
-                            Height="15"
-                            Width="15" />
-                    </Button>
+                            Kind="Face" Width="25" Height="25" />
+                    </ToggleButton>
                 </StackPanel>
 
             </DockPanel>

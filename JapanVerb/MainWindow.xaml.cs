@@ -68,7 +68,6 @@ namespace JapanVerb
 
             btnNext.IsEnabled = false;
             btnPrev.IsEnabled = false;
-            btnCheck.IsEnabled = false;
         }
 
         private void BtnStop_Click(object sender, RoutedEventArgs e)
@@ -79,7 +78,6 @@ namespace JapanVerb
 
             btnNext.IsEnabled = true;
             btnPrev.IsEnabled = true;
-            btnCheck.IsEnabled = true;
         }
 
         private void BtnPrev_Click(object sender, RoutedEventArgs e)
@@ -155,6 +153,22 @@ namespace JapanVerb
             else
             {
                 SnackbarTwo.IsActive = true;
+            }
+        }
+
+        private void ToggleIconButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (SnackbarTwo.IsActive == true)
+            {
+                SnackbarTwo.IsActive = false;
+                toggleDirectionButton.IsChecked = false;
+            }
+
+            else
+            {
+                SnackbarTwo.IsActive = true;
+                toggleDirectionButton.IsChecked = true;
+
             }
         }
     }
